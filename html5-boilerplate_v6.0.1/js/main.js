@@ -1,44 +1,38 @@
 (function() {
 	"use strict";
-	let css_blanc = {
-        'background-color': 'black',
-            'font-weight': 'bolder',
+
+    let css_blanc = {
+        'background-color': 'orange',
+        'font-weight': 'bolder',
         'border': 'solid 1px white',
-        'color': 'white'
+        'color': 'purple',
+        'width': '150px',
+        'height': '150px',
+        'text-align': 'center'
     };
 
-	let css_noir = {
-        'background-color': 'white',
+    let css_noir = {
+        'background-color': 'purple',
         'font-weight': 'bolder',
         'border': 'solid 1px black',
-        'color': 'black'
+        'color': 'orange',
+        'width': '150px',
+        'height': '150px',
+        'text-align': 'center'
+
     };
 
-	let css_surbrillance = {
+    let css_surbrillance = {
         'background-color': 'red',
         'color': 'white'
     };
 
-	let classBlanche = 'case-blanche';
-	let classNoire = 'case-noire';
+    new Damier(3, 3, '#damier');
 
-	$(document).ready(function () {
-        for (let i = 0; i < 4; i++) {
-            let colonne = $('<tr />');
-            let td = colonne;
-            for (let k = 0; k < 4; k++) {
-                let ligne = $('<td />');
-                td.append(
-                    ligne.addClass(classBlanche).html("B"),
-                    ligne.addClass(classNoire).html("N")
-                );
-            }
-            $('#damier').append(td);
-        }
-
+    $(document).ready(function () {
         $('.case-blanche').css(css_blanc).hover(
             function () {
-            $(this).css(css_surbrillance);
+                $(this).css(css_surbrillance);
             },
             function () {
                 $(this).css(css_blanc)
